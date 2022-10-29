@@ -1,0 +1,22 @@
+/*
+* Para construir una imagen
+*/
+docker build -t <name-image> .
+
+/*
+* Para construir un container a base de una imagen
+*/
+docker run -p <port>:<actual-port> -d --name <container-name> <name-image>:<version>
+docker run -p 8080:80 -d --name myapp hello-app:1.0 
+
+/*
+* Para construir un container a base de una imagen con volumen
+*/
+docker run -d -v $(pwd)/src:/var/wwww/html/ <name-image>
+docker run -d -v $(pwd)/src:/var/www/html/ php-app
+/*
+* Para eliminar todos los containers
+*/
+docker rm $(docker ps -aq)
+
+
