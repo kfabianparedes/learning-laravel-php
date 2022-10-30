@@ -19,4 +19,7 @@ docker run -d -v $(pwd)/src:/var/www/html/ php-app
 */
 docker rm $(docker ps -aq)
 
-
+/*
+* Para parar algún container
+*/
+docker stop <code-image>
